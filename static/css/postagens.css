@@ -1,0 +1,130 @@
+:root {
+    --clr-green: #008d28;
+    --clr-light-green: #91e4a8;
+    --clr-yellow: #f0d45a;
+    --clr-dark-yellow: #d8bf4e;
+    --clr-orange: #ff7300;
+    --clr-dark-orange: #ff3c00;
+    --clr-dark-red: #d10000;
+    --clr-burgundy: #b10101;
+}
+
+main {
+    padding-bottom: 4rem;
+}
+
+.titulo-postagens h2 {
+    font-size: 2.5rem;
+    color: var(--clr-green);
+    font-weight: bold;
+    margin: 6rem 0 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.lista-postagens {
+    margin: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.lista-postagens h3, p {
+    color: var(--clr-green);
+    font-size: 1.3rem;
+}
+
+.postagem {
+    margin-bottom: 2.5rem;
+    background-color: var(--clr-light-green);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    border-color: var(--clr-green);
+}
+
+.card-postagem {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 6 1 57rem;
+}
+
+.opcoes-postagem {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.cabecalho-postagem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.texto-postagem {
+    margin-bottom: 1rem;
+}
+
+.botao-editar {
+    margin-bottom: 1.5rem;
+}
+
+.opcoes-postagem button {
+    width: 6rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    border-style: none;
+}
+
+.botao-editar button {
+    background-color: var(--clr-yellow);
+    color: var(--clr-orange);
+    font-weight: bold;
+}
+
+.botao-editar button:hover {
+    background-color: var(--clr-dark-yellow);
+    color: var(--clr-dark-orange);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.botao-excluir button {
+    background-color: var(--clr-dark-red);
+    color: rgb(250, 227, 231);
+    font-weight: bold;
+}
+
+.botao-excluir button:hover {
+    background-color: var(--clr-burgundy);
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 769px) {
+
+    .opcoes-postagem {
+        margin: 1.5rem 0 0;
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .botao-editar {
+        margin: 0 1.5rem 0 0;
+    }
+}

@@ -1,0 +1,41 @@
+:root {
+    --clr-green: #008d28;
+}
+
+main {
+    padding-bottom: 8rem;
+}
+
+.titulo-sobre {
+    text-align: center;
+    font-size: 4rem;
+    margin: 7rem 0 3rem 0;
+    color: var(--clr-green);
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.texto-sobre {
+    flex: 6 1 16rem;
+    margin-bottom: 2rem;
+}
+
+.texto-sobre p {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: var(--clr-green);
+}
+
+.img-sobre {
+    flex: 1 1 35rem;
+}
+
+.img-sobre img {
+    display: block;
+    max-width: 100%;
+    padding: 0 8rem;
+}

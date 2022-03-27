@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>Sobre - Django Posts</title>
+</head>
+{% include 'partials/nav-bar.html' %}
+<main>
+    <div class="content">
+        <h2 class="titulo-sobre">SOBRE</h2>
+        <div class="content-container">
+            <div class="texto-sobre">
+                <p>Esta página foi construída por Gabriel Costa e tem como propósito ser um portal de postagens.</p>
+                <p>Este site foi construído utilizando Django, além de HTML e CSS.</p>
+                <p>Você pode criar suas postagens, editá-las e e muito mais. Divirta-se!</p>
+            </div>
+            <div class="img-sobre">
+                <img src="{% static '/imgs/IMG - tecnologias.png' %}" alt="Ícones do Django, HTML e CSS.">
+            </div>
+        </div> 
+    </div>
+</main>
+{% include 'partials/footer.html' %}
+{% endblock %}

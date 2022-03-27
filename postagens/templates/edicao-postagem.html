@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static '/css/nova-postagem.css' %}">
+</head>
+{% include 'partials/nav-bar.html' %}
+<main>
+    <div class="content">
+        <div class="titulo-pagina">
+            <h2>EDITAR POSTAGEM</h2>
+        </div>
+        <div class="dados-container">
+            <div class="dados">
+                <form action="/editar-postagem/" method="post">{% csrf_token %}
+                    <div class="div-dados">
+                        <label for="id-postagem">ID da Postagem</label>
+                        <input type="number" value="{{postagem.id_postagem}}" name="id-postagem" id="id-postagem" 
+                        minlength="1" maxlength="6" readonly required>
+                    </div>
+                    <div class="div-dados">
+                        <label for="nome-autor">Nome do Autor</label>
+                        <input type="text" value="{{postagem.nome_autor}}" name="nome-autor" id="nome-autor" 
+                        minlength="1" maxlength="50" required>
+                    </div>
+                    <div class="div-dados">
+                        <label for="titulo-post">Título</label>
+                        <input type="text" value="{{postagem.titulo_postagem}}" name="titulo-post" id="titulo-post" 
+                        minlength="1" maxlength="50" required>
+                    </div>
+                    <div class="div-dados">
+                        <label for="texto-post">Texto</label>
+                        <textarea style="resize: none;" name="texto-post" id="texto-post" 
+                        cols="30" rows="10" minlength="1" maxlength="500" required>{{postagem.texto_postagem}}</textarea>
+                    </div>
+                    <div class="botao-postar">
+                        <button type="submit">SALVAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% include 'partials/footer.html' %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static '/css/nova-postagem.css' %}">
+</head>
+{% include 'partials/nav-bar.html' %}
+<main>
+    <div class="content">
+        <div class="titulo-pagina">
+            <h2>NOVA POSTAGEM</h2>
+        </div>
+        <div class="dados-container">
+            <div class="dados">
+                <form action="publicar-postagem" method="post">{% csrf_token %}
+                    <div class="div-dados">
+                        <label for="nome-autor">Nome do Autor</label>
+                        <input type="text" name="nome-autor" id="nome-autor" 
+                        placeholder="Ex: João Silva" minlength="1" maxlength="50" required>
+                    </div>
+                    <div class="div-dados">
+                        <label for="titulo-post">Título</label>
+                        <input type="text" name="titulo-post" id="titulo-post" 
+                        placeholder="Ex: Manhã de Sol" minlength="1" maxlength="50" required>
+                    </div>
+                    <div class="div-dados">
+                        <label for="texto-post">Texto</label>
+                        <textarea style="resize: none;" name="texto-post" id="texto-post" 
+                        cols="30" rows="10" placeholder="Máx de 500 caracteres." minlength="1" maxlength="500" required></textarea>
+                    </div>
+                    <div class="botao-postar">
+                        <button type="submit">POSTAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% include 'partials/footer.html' %}
+{% endblock %}

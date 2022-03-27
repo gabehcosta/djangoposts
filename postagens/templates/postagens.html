@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static '/css/postagens.css' %}">
+    <title>Postagens - Django Posts</title>
+</head>
+{% include 'partials/nav-bar.html' %}
+<main>
+    <div class="content">
+        <div class="titulo-postagens">
+            <h2>POSTAGENS</h2>
+        </div>
+        <div class="lista-postagens">
+            {% for postagem in postagens %}
+            <div class="postagem">
+                <div class="card-postagem">
+                    <div class="conteudo-postagem">
+                        <div class="cabecalho-postagem">
+                            <h3>{{postagem.titulo_postagem}}</h3>
+                            <h3>{{postagem.data_postagem}}</h3>
+                        </div>
+                        <div class="texto-postagem">
+                            <p>
+                                {{postagem.texto_postagem.upper}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="autor-postagem">
+                        <h3>{{postagem.nome_autor}}</h3>
+                    </div>
+                </div>
+                <div class="opcoes-postagem">
+                    <div class="botao-editar">
+                        <a href="edicao-postagem/{{postagem.id_postagem}}">
+                            <button type="submit">Editar</button>
+                        </a>
+                    </div>
+                    <div class="botao-excluir">
+                        <a href="excluir-postagem/{{postagem.id_postagem}}">
+                            <button type="submit">Excluir</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% include 'partials/footer.html' %}
+{% endblock %}

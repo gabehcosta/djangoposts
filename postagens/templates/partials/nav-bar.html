@@ -1,0 +1,17 @@
+{% load static %}
+<header>
+    <nav class="nav-bar">
+        <div class="django-icon">
+            <a href="{% url 'index' %}">
+                <img src="{% static '/imgs/Icone - Django - LOGO.png' %}" alt="Ícone do Django">
+            </a>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li><a href="{% url 'index' %}">SOBRE</a></li>
+                <li><a href="{% url 'postagens' %}">POSTAGENS</a></li>
+                <li><a href="{% url 'nova-postagem' %}">NOVA POSTAGEM</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
